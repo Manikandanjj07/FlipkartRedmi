@@ -97,8 +97,6 @@ public void radio_button() throws InterruptedException
 	Thread.sleep(5000);
 	v.getCancel().click();
 	Thread.sleep(3000);
-//	v.getRadio2().click();
-	
 	v.getCart().click();
 }
 

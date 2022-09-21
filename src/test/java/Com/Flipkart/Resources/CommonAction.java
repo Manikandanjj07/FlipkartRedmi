@@ -123,7 +123,7 @@ public void radio(WebElement r1,WebElement r2, WebElement pin, WebElement msg) t
 {
 	 Thread.sleep(3000);
 	 if(r1.isSelected()){
-		System.out.println("Buy without is enabled default");
+		System.out.println("(RADIO1)Buy without is enabled default");
 		}
 	
 		System.out.println("entering pincode");
@@ -136,14 +136,10 @@ public void radio(WebElement r1,WebElement r2, WebElement pin, WebElement msg) t
 		}
 
 		driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
-
+for(int i=0; i<6;i++)
+{
 		pin.sendKeys(Keys.BACK_SPACE);
-		pin.sendKeys(Keys.BACK_SPACE);
-		pin.sendKeys(Keys.BACK_SPACE);
-		pin.sendKeys(Keys.BACK_SPACE);
-		pin.sendKeys(Keys.BACK_SPACE);
-		pin.sendKeys(Keys.BACK_SPACE);
-		
+}
 		driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
 
 		pin.sendKeys("600002", Keys.ENTER);
@@ -162,9 +158,9 @@ public void delivery_Details( WebElement dlvryy){
 	driver.manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
 	System.out.println( dlvryy.getText());
     }
-public void pricedetails(WebElement head, List<WebElement> prices, List<WebElement> amts, WebElement dis)
+public void pricedetails(WebElement head, List<WebElement> prices, List<WebElement> amts, WebElement dis) throws InterruptedException
 {
-	driver.manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
+	Thread.sleep(3000);
 System.out.println(head.getText());
 System.out.println(prices.get(0).getText()+ "  "+ amts.get(0).getText());
 System.out.println(prices.get(1).getText()+"  "+dis.getText());
@@ -181,7 +177,7 @@ for(int i =2; i<prices.size()-1;i++)
 
 public void clos()
 {
-	driver.close();
+	driver.quit();
 }
 
 
